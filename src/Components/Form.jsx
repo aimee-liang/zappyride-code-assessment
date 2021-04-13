@@ -1,4 +1,6 @@
 import {useState} from 'react'
+import SelectDropdown from "./Components/SelectDropdown"
+
 
 export default function Form(){
 
@@ -7,11 +9,16 @@ export default function Form(){
         hoursOfTheDay: []
     })
 
+    const [rate, setRate] = useState(null)
+
+    /* helper fn() to set rate in state and pass as props */
+    const rateSetter = (data) => {
+        setRate(data)
+    }
+
     return (
-        <>
-            <form>
-                
-            </form>
-        </>
+        <form>
+            <SelectDropdown rateSetter={rateSetter} />
+        </form>
     )
 }
