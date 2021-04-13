@@ -25,6 +25,8 @@ export default function Form(){
                 <SelectDropdown rateSetter={rateSetter} />
             <label>How many miles will you be driving per year?</label>
                 <input type="text" value={data.miles} onChange={establishData} /> 
+            <label>What hours do you plan to charge?</label>
+                <input />
         </form>
     )
 }
