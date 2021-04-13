@@ -46,8 +46,7 @@ o For instance, a TOU rate with no demand charge could be:
 • 5 kWh between midnight and 5am
 • 20 kWh between 5am and 9pm
 • 4 kWh between 9pm and midnight
-• Then the bill for that day will be $0.10 * 5 + $0.15*20 + $0.10*4 =
-$3.90 .
+• Then the bill for that day will be $0.10 * 5 + $0.15 *20 + $0.10 *4 = $3.90 .
 ### Application to EVs
 Generally speaking, when a homeowner purchases an EV, they will charge it in their garage.
 To calculate the impact of the EV on the electric bill, we can use the following steps:
@@ -73,9 +72,10 @@ options:
 • Bill impact of charging an EV under each rate
 • Whether or not the user should switch rates (from A to B or from B to A, depending on their
 input) or whether they are already on the cheapest rate.
-#### Please use this load profile (the “Electricity:Facility [kWh](Hourly)” column) as their current home load
+
+Please use this load profile (the “Electricity:Facility [kWh](Hourly)” column) as their current home load
 profile (pre-EV).
-For your reference, a similar (more complex) tool is deployed here .
+For your reference, a similar (more complex) tool is deployed [here](https://ev.pge.com/rates/) .
 Please deploy your React app to a publicly accessible host (e.g. Heroku) for us to test, and please provide
 the source code (e.g. in GitHub).
 
@@ -90,4 +90,5 @@ the source code (e.g. in GitHub).
 • Small commits
 • Documentation
 • Anything else going above and beyond the requirements
-GOOD LUCK!
+
+#### GOOD LUCK!
