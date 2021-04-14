@@ -6,15 +6,14 @@ export default function Form(){
 
     const [rate, setRate] = useState(null)
     const [mileRange, setMileRange] = useState()
-    // const []
 
     const rateSetter = (data) => {
         setRate(data)
     }
 
-    const establishData = (e) => {
-        setData({...data, [e.target.name]: e.target.value})
-    }
+    // const establishData = (e) => {
+    //     setData({...data, [e.target.name]: e.target.value})
+    // }
 
     return (
         <form>
