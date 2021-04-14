@@ -2,7 +2,7 @@ import {useState} from 'react'
 import SelectRate from "./SelectRate"
 import SelectMileRange from "./SelectMileRange"
 
-export default function Form(){
+export default function Form(props){
 
     const [rate, setRate] = useState(null)
     const [mileRange, setMileRange] = useState()
@@ -18,6 +18,10 @@ export default function Form(){
 
     const hourSetter = (data) => {
         setHourRange(data)
+    }
+
+    const dataToApp = () => {
+
     }
 
     return (

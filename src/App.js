@@ -8,6 +8,9 @@ export default function App() {
 /* formData is going to be set in state so we know that everything is complete */
   const [formData, setFormData] = useState({})
 
+  const dataSetter = (info) => {
+    setFormData(info)
+  }
 /* loadpage should not render until form is complete */
 
   return (
