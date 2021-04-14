@@ -8,15 +8,16 @@ export default function App() {
 /* formData is going to be set in state so we know that everything is complete */
   const [formData, setFormData] = useState({})
 
+/* pass dataSetter as props to Form component, which will save the data from the user in state */
   const dataSetter = (info) => {
     setFormData(info)
   }
-/* loadpage should not render until form is complete */
 
   return (
     <MuiThemeProvider>
       <AppBar title="ZappyRide Code Assessment"/>
-      <Form />
+      <Form dataSetter={dataSetter} />
+{/* loadpage should not render until form is complete */}
       <LoadPage />
     </MuiThemeProvider>
   );
