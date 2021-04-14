@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import SelectDropdown from "./SelectDropdown"
+import SelectRate from "./SelectRate"
 
 
 export default function Form(){
@@ -22,11 +22,12 @@ export default function Form(){
     return (
         <form>
             <label>Please select your current rate:</label>
-                <SelectDropdown rateSetter={rateSetter} />
+                <SelectRate rateSetter={rateSetter} />
             <label>How many miles will you be driving per year?</label>
-                <input type="text" value={data.miles} onChange={establishData} /> 
+                
+                {/* <input type="text" value={data.miles} onChange={establishData} />  */}
             <label>What hours do you plan to charge?</label>
-                <input />
+                <input type="text" value={data.hoursOfTheDay} onChange={establishData}/>
         </form>
     )
 }

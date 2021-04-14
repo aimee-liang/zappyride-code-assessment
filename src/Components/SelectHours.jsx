@@ -5,7 +5,7 @@ const options = [
     {value: 'Rate B', label: 'Rate B (TOU Rate)'}
 ]
 
-export default function SelectDropdown(props){
+export default function SelectRate(props){
 
     const clickHandler = (e) => {
         props.rateSetter(e.value)
