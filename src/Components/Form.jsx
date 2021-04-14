@@ -4,12 +4,9 @@ import SelectMileRange from "./SelectMileRange"
 
 export default function Form(){
 
-    const [data, setData] = useState({
-        miles: 0,
-        hoursOfTheDay: []
-    })
-
     const [rate, setRate] = useState(null)
+    const [mileRange, setMileRange] = useState()
+    // const []
 
     const rateSetter = (data) => {
         setRate(data)
@@ -27,7 +24,7 @@ export default function Form(){
                 <SelectMileRange />
                 {/* <input type="text" value={data.miles} onChange={establishData} />  */}
             <label>What hours do you plan to charge?</label>
-                <input type="text" value={data.hoursOfTheDay} onChange={establishData}/>
+                {/* <input type="text" value={data.hoursOfTheDay} onChange={establishData}/> */}
         </form>
     )
 }
