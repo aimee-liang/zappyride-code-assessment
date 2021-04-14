@@ -13,6 +13,13 @@ export default function App() {
     setFormData(info)
   }
 
+/* calculate the bill B1 and the rate the user is currently on */
+  const currentRate = () => {
+    return 
+  }
+
+  
+
   return (
     <MuiThemeProvider>
       <AppBar title="ZappyRide Code Assessment"/>
