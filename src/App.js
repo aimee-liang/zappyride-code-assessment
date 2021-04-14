@@ -13,12 +13,21 @@ export default function App() {
     setFormData(info)
   }
 
+/* establish TOU rate */
+  // const touRate = () => {
+  //   if (){
+  //     return 0.1
+  //   } else if (){
+  //     return 
+  //   }
+  // }
+
 /* calculate the bill B1 and the rate the user is currently on */
   const currentRate = () => {
     return 
   }
 
-  
+
 
   return (
     <MuiThemeProvider>
