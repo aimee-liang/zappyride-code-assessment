@@ -1,12 +1,15 @@
 import {useState} from 'react'
+import {useForm} from 'react-hook-form'
 import SelectRate from "./SelectRate"
 import SelectMileRange from "./SelectMileRange"
+import Button from '@material-ui/core/Button';
 
 export default function Form(props){
 
     const [rate, setRate] = useState(null)
     const [mileRange, setMileRange] = useState(null)
     const [hours, setHourRange] = useState(null)
+    const {register, handleSubmit, watch, errors} = useForm()
 
     const rateSetter = (data) => {
         setRate(data)
@@ -22,19 +25,24 @@ export default function Form(props){
 
 /* this is to grab the data from form and send back up to App */
     const dataToApp = () => {
-        props.dataSetter({rate, mileRange, hours})
+        // props.dataSetter({rate, mileRange, hours})
+        console.log("hello")
     }
 
     return (
         <>
-            <form>
+            <form onSubmit={handleSubmit(dataToApp)}>
                 <label>Please select your current rate:</label>
                     <SelectRate rateSetter={rateSetter} />
+                    <br/>
                 <label>How many miles will you be driving per year?</label>
                     <SelectMileRange />
+                    <br/>
                     {/* <input type="text" value={data.miles} onChange={establishData} />  */}
                 <label>What hours do you plan to charge?</label>
                     {/* <input type="text" value={data.hoursOfTheDay} onChange={establishData}/> */}
+                    <br />
+                <Button variant="contained" color="primary">Submit</Button>
             </form>
         </>
     )
