@@ -1,8 +1,8 @@
 import Select from 'react-select'
 
 const options = [
-    {value: 'Rate A', label: 'Rate A ($0.15/kWh'},
-    {value: 'Rate B', label: 'Rate B (TOU Rate)'}
+    {value: '$0.15', label: 'Rate A ($0.15/kWh'},
+    {value: 'TOU', label: 'Rate B (TOU Rate)'}
 ]
 
 export default function SelectRate(props){
