@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import SelectRate from "./SelectRate"
-import SelectMileRnage from "./SelectMileRange"
+import SelectMileRange from "./SelectMileRange"
 
 export default function Form(){
 
@@ -24,7 +24,7 @@ export default function Form(){
             <label>Please select your current rate:</label>
                 <SelectRate rateSetter={rateSetter} />
             <label>How many miles will you be driving per year?</label>
-
+                <SelectMileRange />
                 {/* <input type="text" value={data.miles} onChange={establishData} />  */}
             <label>What hours do you plan to charge?</label>
                 <input type="text" value={data.hoursOfTheDay} onChange={establishData}/>
