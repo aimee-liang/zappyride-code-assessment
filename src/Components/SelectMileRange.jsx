@@ -103,13 +103,32 @@ const marks = [
         value: 100000,
         label: '100,000'
     },
-
 ]
+
+const valuetext = (value) => {
+    return `${value} miles`
+}
 
 export default function SelectMileRange(props){
 
+    const [miles, setMiles] = useState(null)
+
+    const localSetter = () => {
+        setMiles(data)
+    }
+    
+    const changeHandler = () => {
+        props.mileSetter(miles)
+    }
+
     return (
         <>
+            <Typography id="custom-slider"></Typography>
+            <Slider 
+                defaultValue={0}
+                getAriaValueText={valuetext}
+                marks={marks}
+            />
         </>
     )
 }

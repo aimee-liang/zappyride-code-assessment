@@ -36,9 +36,8 @@ export default function Form(props){
                     <SelectRate rateSetter={rateSetter} />
                     <br/>
                 <label>How many miles will you be driving per year?</label>
-                    <SelectMileRange />
+                    <SelectMileRange mileSetter={mileSetter} />
                     <br/>
-                    {/* <input type="text" value={data.miles} onChange={establishData} />  */}
                 <label>What hours do you plan to charge?</label>
                     {/* <input type="text" value={data.hoursOfTheDay} onChange={establishData}/> */}
                     <br />
