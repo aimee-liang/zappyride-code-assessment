@@ -7,6 +7,10 @@ import LoadPage from "./Components/LoadPage"
 export default function App() {
 /* formData is going to be set in state so we know that everything is complete */
   const [formData, setFormData] = useState({})
+  const [rateAForComparison, setRateAForComparison] = useState(null) /* this will set rate A in comparison so we can compare in Load Page vs. TOU */
+  const [touRateForComparison, setTOURateForComparison] = useState(null)
+  
+
 
 /* pass dataSetter as props to Form component, which will save the data from the user in state */
   const dataSetter = (info) => {
