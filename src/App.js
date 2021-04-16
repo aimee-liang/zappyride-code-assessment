@@ -13,14 +13,15 @@ export default function App() {
     setFormData(info)
   }
 
+/* establish Rate A */
+  const rateA = 0.15
+
 /* establish TOU rate */
-  // const touRate = () => {
-  //   if (){
-  //     return 0.1
-  //   } else if (){
-  //     return 
-  //   }
-  // }
+  const touRate = () => {
+    /* if the hours are between noon - 6 pm, $0.2 kWh */
+    
+    /* anytime else, $0.08 kWh */
+  }
 
 /* calculate the bill B1 and the rate the user is currently on */
   const currentRate = () => {
