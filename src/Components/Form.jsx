@@ -2,6 +2,7 @@ import {useState} from 'react'
 import {useForm} from 'react-hook-form'
 import SelectRate from "./SelectRate"
 import SelectMileRange from "./SelectMileRange"
+import SelectHours from "./SelectHours"
 import Button from '@material-ui/core/Button';
 
 export default function Form(props){
@@ -39,7 +40,7 @@ export default function Form(props){
                     <SelectMileRange mileSetter={mileSetter} />
                     <br/>
                 <label>What hours do you plan to charge?</label>
-                    {/* <input type="text" value={data.hoursOfTheDay} onChange={establishData}/> */}
+                    <SelectHours hourSetter={hourSetter}/>
                     <br />
                 <Button variant="contained" color="primary">Submit</Button>
             </form>
