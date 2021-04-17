@@ -50,7 +50,9 @@ export default function Form(props){
                     <br/>
                     <br/>
                     <SelectMileRange mileSetter={mileSetter} />
-                <label>What hours do you plan to charge?</label>
+                <label>What hours do you plan on charging?</label>
+                    <br/>
+                    <br/>
                     <SelectHours hourSetter={hourSetter}/>
                     <br/>
                 <Button variant="contained" color="primary" onSubmit={dataToApp}>Submit</Button>

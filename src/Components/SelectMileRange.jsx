@@ -25,24 +25,12 @@ const marks = [
         label: '15,000'
     },
     {
-        value: 17500,
-        label: '17,500'
-    },
-    {
         value: 20000,
         label: '20,000'
     },
     {
-        value: 22500,
-        label: '22,500'
-    },
-    {
         value: 25000,
         label: '25,000'
-    },
-    {
-        value: 27500,
-        label: '27,500'
     },
     {
         value: 30000,
@@ -111,26 +99,26 @@ const valuetext = (value) => {
 }
 
 const SelectMileRangeWrapper = styled.div`
-    padding-bottom: 5%
+    padding-bottom: 3%
 `
 
 export default function SelectMileRange(props){
 
     const [miles, setMiles] = useState(null)
-
-    const localSetter = (data) => {
-        setMiles(data)
-    }
     
-    const changeHandler = () => {
+    const changeHandler = (e) => {
+        setMiles(e.value)
+    }
+
+    const localMileSetter = () => {
         props.mileSetter(miles)
     }
-
+    
     return (
         <SelectMileRangeWrapper>
             <Typography id="custom-slider"></Typography>
             <Slider 
-                defaultValue={0}
+                defaultValue={5000}
                 onChange={changeHandler}
                 getAriaValueText={valuetext}
                 marks={marks}
