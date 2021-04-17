@@ -1,4 +1,4 @@
-import {useState} from 'react'
+// import {useState} from 'react'
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
 import styled from 'styled-components'
@@ -104,15 +104,17 @@ const SelectMileRangeWrapper = styled.div`
 
 export default function SelectMileRange(props){
 
-    const [miles, setMiles] = useState(null)
+    // const [miles, setMiles] = useState(null)
     
     const changeHandler = (e) => {
-        setMiles(e.value)
+        props.mileSetter(e.value)
+        // setMiles(e.value)
+        // localMileSetter()
     }
 
-    const localMileSetter = () => {
-        props.mileSetter(miles)
-    }
+    // const localMileSetter = () => {
+    //     props.mileSetter(miles)
+    // }
     
     return (
         <SelectMileRangeWrapper>
