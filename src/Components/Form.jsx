@@ -7,9 +7,10 @@ import Button from '@material-ui/core/Button';
 import styled from 'styled-components'
 
 const FormWrapper = styled.div`
+    padding-top: 3%;
     margin: auto;
-    height: 85vh;
-    width: auto;
+    align-items: center;
+    width: 50vw;
 `
 
 
@@ -40,7 +41,7 @@ export default function Form(props){
     }
 
     return (
-        <>
+        <FormWrapper>
             <form onSubmit={handleSubmit(dataToApp)}>
                 <label>Please select your current rate:</label>
                     <SelectRate rateSetter={rateSetter} />
@@ -53,6 +54,6 @@ export default function Form(props){
                     <br />
                 <Button variant="contained" color="primary" onSubmit={dataToApp}>Submit</Button>
             </form>
-        </>
+        </FormWrapper>
     )
 }

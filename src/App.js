@@ -3,6 +3,11 @@ import Form from "./Components/Form"
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import AppBar from 'material-ui/AppBar'
 import LoadPage from "./Components/LoadPage"
+import styled from 'styled-components'
+
+const AppWrapper = styled.div`
+  overflow-x: hidden;
+`
 
 export default function App() {
 /* formData is going to be set in state so we know that everything is complete */
@@ -34,11 +39,13 @@ export default function App() {
 
 
   return (
-    <MuiThemeProvider>
-      <AppBar title="ZappyRide Code Assessment"/>
-      <Form dataSetter={dataSetter} />
-{/* loadpage should not render until form is complete */}
-      <LoadPage />
-    </MuiThemeProvider>
+    <AppWrapper>
+      <MuiThemeProvider>
+        <AppBar title="ZappyRide Code Assessment"/>
+        <Form dataSetter={dataSetter} />
+  {/* loadpage should not render until form is complete */}
+        <LoadPage />
+      </MuiThemeProvider>
+    </AppWrapper>
   );
 }
