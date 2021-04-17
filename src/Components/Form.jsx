@@ -10,9 +10,8 @@ const FormWrapper = styled.div`
     padding-top: 3%;
     margin: auto;
     align-items: center;
-    width: 50vw;
+    width: 38vw;
 `
-
 
 export default function Form(props){
 
@@ -44,14 +43,16 @@ export default function Form(props){
         <FormWrapper>
             <form onSubmit={handleSubmit(dataToApp)}>
                 <label>Please select your current rate:</label>
+                    <br/>
+                    <br/>
                     <SelectRate rateSetter={rateSetter} />
-                    <br/>
                 <label>How many miles will you be driving per year?</label>
-                    <SelectMileRange mileSetter={mileSetter} />
                     <br/>
+                    <br/>
+                    <SelectMileRange mileSetter={mileSetter} />
                 <label>What hours do you plan to charge?</label>
                     <SelectHours hourSetter={hourSetter}/>
-                    <br />
+                    <br/>
                 <Button variant="contained" color="primary" onSubmit={dataToApp}>Submit</Button>
             </form>
         </FormWrapper>

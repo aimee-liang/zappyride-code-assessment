@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
+import styled from 'styled-components'
 
 const marks = [
     {
@@ -109,6 +110,10 @@ const valuetext = (value) => {
     return `${value} miles`
 }
 
+const SelectMileRangeWrapper = styled.div`
+    padding-bottom: 5%
+`
+
 export default function SelectMileRange(props){
 
     const [miles, setMiles] = useState(null)
@@ -122,7 +127,7 @@ export default function SelectMileRange(props){
     }
 
     return (
-        <>
+        <SelectMileRangeWrapper>
             <Typography id="custom-slider"></Typography>
             <Slider 
                 defaultValue={0}
@@ -130,6 +135,6 @@ export default function SelectMileRange(props){
                 getAriaValueText={valuetext}
                 marks={marks}
             />
-        </>
+        </SelectMileRangeWrapper>
     )
 }
