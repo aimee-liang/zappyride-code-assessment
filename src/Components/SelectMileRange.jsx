@@ -113,7 +113,7 @@ export default function SelectMileRange(props){
 
     const [miles, setMiles] = useState(null)
 
-    const localSetter = () => {
+    const localSetter = (data) => {
         setMiles(data)
     }
     

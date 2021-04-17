@@ -4,6 +4,14 @@ import SelectRate from "./SelectRate"
 import SelectMileRange from "./SelectMileRange"
 import SelectHours from "./SelectHours"
 import Button from '@material-ui/core/Button';
+import styled from 'styled-components'
+
+const FormWrapper = styled.div`
+    margin: auto;
+    height: 85vh;
+    width: auto;
+`
+
 
 export default function Form(props){
 
@@ -24,8 +32,9 @@ export default function Form(props){
         setHourRange(data)
     }
 
-/* this is to grab the data from form and send back up to App */
+/* this is a fn to grab the data from form and send back up to App */
     const dataToApp = () => {
+        /* if there is a section missing, need to throw an error */
         // props.dataSetter({rate, mileRange, hours})
         console.log("hello")
     }
