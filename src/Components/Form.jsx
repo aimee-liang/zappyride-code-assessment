@@ -42,7 +42,7 @@ export default function Form(props){
                 <label>What hours do you plan to charge?</label>
                     <SelectHours hourSetter={hourSetter}/>
                     <br />
-                <Button variant="contained" color="primary">Submit</Button>
+                <Button variant="contained" color="primary" onSubmit={dataToApp}>Submit</Button>
             </form>
         </>
     )
