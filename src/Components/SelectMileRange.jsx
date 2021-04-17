@@ -126,6 +126,7 @@ export default function SelectMileRange(props){
             <Typography id="custom-slider"></Typography>
             <Slider 
                 defaultValue={0}
+                onChange={changeHandler}
                 getAriaValueText={valuetext}
                 marks={marks}
             />
