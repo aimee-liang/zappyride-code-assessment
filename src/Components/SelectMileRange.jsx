@@ -97,7 +97,7 @@ export default function SelectMileRange(props){
     return (
         <SelectMileRangeWrapper>
             <Slider 
-                // values={miles}
+                // step={1000}
                 valueLabelDisplay="auto"
                 onChange={changeHandler}
                 marks={marks}
