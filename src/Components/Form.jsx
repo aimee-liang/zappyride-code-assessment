@@ -40,17 +40,19 @@ export default function Form(props){
     }
 
     return (
+        <>
+        {console.log(mileRange)}
         <FormWrapper>
             <form onSubmit={handleSubmit(dataToApp)}>
                 <label>Please select your current rate:</label>
                     <br/>
                     <br/>
                     <SelectRate rateSetter={rateSetter} />
-                <label>How many miles will you be driving per year?</label>
+                <label>How many miles (per thousand) will you be driving per year?</label>
                     <br/>
                     <br/>
                     <SelectMileRange mileSetter={mileSetter} />
-                <label>What hours do you plan on charging?</label>
+                <label>What hours do you plan on charging your EV?</label>
                     <br/>
                     <br/>
                     <SelectHours hourSetter={hourSetter}/>
@@ -58,5 +60,6 @@ export default function Form(props){
                 <Button variant="contained" color="primary" onSubmit={dataToApp}>Submit</Button>
             </form>
         </FormWrapper>
+        </>
     )
 }
