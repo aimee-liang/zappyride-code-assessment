@@ -17,7 +17,9 @@ export default function SelectHours(props){
         setValue(newValue)
     }
 
-    // props.hourSetter(newValue)
+    const sendValueToProps = (data) => {
+        props.hourSetter(data)
+    }
 
     return (
         <SelectHoursWrapper>
