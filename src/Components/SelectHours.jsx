@@ -1,17 +1,23 @@
-import Select from 'react-select'
+import Slider from '@material-ui/core/Slider'
+import styled from 'styled-components'
 
-const options = [
-    {value: 'Rate A', label: 'Noon to 6PM'},
-    {value: 'Rate B', label: 'Rate B (TOU Rate)'}
-]
+const SelectHoursWrapper = styled.div`
+    padding-bottom: 3%;
+`
 
-export default function SelectRate(props){
+export default function SelectHours(props){
 
-    const clickHandler = (e) => {
-        props.rateSetter(e.value)
+    const changeHandler = (event, data) => {
+        props.hourSetter(data)
     }
 
     return (
-        <Select options={options} onChange={clickHandler} />
+        <SelectHoursWrapper>
+            <Slider 
+            valueLabelDisplay="auto"
+            onChange={changeHandler}
+            marks={marks}
+            />
+        </SelectHoursWrapper>
     )
 }
