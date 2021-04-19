@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import Slider from '@material-ui/core/Slider'
 import styled from 'styled-components'
 
@@ -7,8 +8,10 @@ const SelectHoursWrapper = styled.div`
 
 export default function SelectHours(props){
 
-    const changeHandler = (event, data) => {
-        props.hourSetter(data)
+    const [value, setValue] = useState([])
+
+    const changeHandler = (event, newValue) => {
+        props.hourSetter(newValue)
     }
 
     return (
