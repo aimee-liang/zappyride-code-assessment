@@ -17,7 +17,7 @@ export default function Form(props){
 
     const [rate, setRate] = useState(null)
     const [mileRange, setMileRange] = useState(null)
-    const [hours, setHourRange] = useState(null)
+    const [hours, setHourRange] = useState([]) /* range in array */
     const {register, handleSubmit, watch, errors} = useForm()
 
     const rateSetter = (data) => {
