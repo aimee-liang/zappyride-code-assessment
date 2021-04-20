@@ -26,8 +26,16 @@ export default function Form(props){
         setRate(data)
     }
 
+    const updateRateInState = () => {
+        setRateInState(true)
+    }
+
     const mileSetter = (data) => {
         setMileRange(data)
+    }
+
+    const updateMileRangeInState = () => {
+        setMileRangeInState(true)
     }
 
     const hourSetter = (data) => {
@@ -41,17 +49,20 @@ export default function Form(props){
     }
 
     return (
+        <>
         <FormWrapper>
             <form>
                 <label>Please select your current rate:</label>
                     <br/>
                     <br/>
-                    {rate === null ? <span style={{color: "red"}}>Required input</span> : <SelectRate rateSetter={rateSetter} /> }
+                    {rateInState ? null : <span>Required field</span>}
+                    <SelectRate rateSetter={rateSetter} rateInState={updateRateInState} />
                     <br />
                 <label>How many miles (per thousand) will you be driving per year?</label>
                     <br/>
                     <br/>
-                    {mileRange === null ? <span style={{color: "red"}}>Required input </span> : <SelectMileRange mileSetter={mileSetter}/> }
+                    {mileRangeInState ? null : <span style={{color: "red"}}>Required input </span>}
+                    <SelectMileRange mileSetter={mileSetter} updateMileRangeInState={updateMileRangeInState}/> 
                 <label>What hours do you plan on charging your EV?</label>
                     <br/>
                     <br/>
@@ -60,5 +71,6 @@ export default function Form(props){
                 <Button variant="contained" color="primary" onSubmit={dataToApp}>Submit</Button>
             </form>
         </FormWrapper>
+        </>
     )
 }

@@ -14,6 +14,7 @@ export default function SelectRate(props){
 
     const clickHandler = (e) => {
         props.rateSetter(e.value)
+        props.rateInState()
     }
 
     return (
