@@ -40,6 +40,8 @@ export default function Form(props){
     }
 
     return (
+        <>
+        {console.log(hours)}
         <FormWrapper>
             <form onSubmit={handleSubmit(dataToApp)}>
                 <label>Please select your current rate:</label>
@@ -58,5 +60,6 @@ export default function Form(props){
                 <Button variant="contained" color="primary" onSubmit={dataToApp}>Submit</Button>
             </form>
         </FormWrapper>
+        </>
     )
 }
