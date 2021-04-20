@@ -16,9 +16,11 @@ const FormWrapper = styled.div`
 export default function Form(props){
 
     const [rate, setRate] = useState(null)
+    const [rateInState, setRateInState] = useState(false) /* helper boolean - if rate is not in state or is null, display span */
     const [mileRange, setMileRange] = useState(null)
+    const [mileRangeInState, setMileRangeInState] = useState(false)
     const [hours, setHourRange] = useState([])
-    // const {register, handleSubmit, watch, errors} = useForm()
+    const [hoursInState, setHoursInState] = useState(false)
 
     const rateSetter = (data) => {
         setRate(data)
@@ -34,9 +36,6 @@ export default function Form(props){
 
 /* this is a fn to grab the data from form and send back up to App */
     const dataToApp = () => {
-        /* if there is a section missing, need to throw an error */
-        // if (rate || mileRange === null) console.log("Required Field")
-        // if (hours.length === 0 || !hours.length) console.log ("Required field")
         // props.dataSetter({rate, mileRange, ...hours})
         console.log("hi")
     }
@@ -47,7 +46,7 @@ export default function Form(props){
                 <label>Please select your current rate:</label>
                     <br/>
                     <br/>
-                    {rate === null ? <span style={{color: "red"}}>Required input</span> : <SelectRate rateSetter={rateSetter}/> }
+                    {rate === null ? <span style={{color: "red"}}>Required input</span> : <SelectRate rateSetter={rateSetter} /> }
                     <br />
                 <label>How many miles (per thousand) will you be driving per year?</label>
                     <br/>
@@ -56,7 +55,7 @@ export default function Form(props){
                 <label>What hours do you plan on charging your EV?</label>
                     <br/>
                     <br/>
-                    <SelectHours hourSetter={hourSetter}/>
+                    {hours.length === 0 ? <span style={{color: "red"}}>Required input</span> : <SelectHours hourSetter={hourSetter}/> }
                     <br/>
                 <Button variant="contained" color="primary" onSubmit={dataToApp}>Submit</Button>
             </form>
