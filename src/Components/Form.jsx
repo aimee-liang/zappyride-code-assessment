@@ -59,7 +59,8 @@ export default function Form(props){
                 <label>Please select your current rate:</label>
                     <br/>
                     <br/>
-                    {rateInState ? null : <span style={{color: "red", fontSize: "12px"}}>Required field*</span>}
+                    {rateInState ? null : <span style={{color: "red", fontSize: "12px"}}>Required input* </span>}
+                    <br/>
                     <br/>
                     <SelectRate rateSetter={rateSetter} rateInState={updateRateInState} />
                 <label>How many miles (per thousand) will you be driving per year?</label>
@@ -71,7 +72,7 @@ export default function Form(props){
                 <label>What hours do you plan on charging your EV?</label>
                     <br/>
                     <br/>
-                    {hoursInState? null : <span style={{color: "red", fontsize: "12px"}}>Required input* </span>}
+                    {hoursInState? null : <span style={{color: "red", fontSize: "12px"}}>Required input* </span>}
                     <SelectHours hourSetter={hourSetter} updateHoursInState={updateHoursInState}/>
                     <br/>
                 <Button variant="contained" color="primary" onSubmit={dataToApp}>Submit</Button>
