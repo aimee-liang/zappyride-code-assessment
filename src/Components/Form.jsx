@@ -17,7 +17,7 @@ export default function Form(props){
 
     const [rate, setRate] = useState(null)
     const [mileRange, setMileRange] = useState(null)
-    const [hours, setHourRange] = useState([]) /* range in array */
+    const [hours, setHourRange] = useState([])
     const {register, handleSubmit, watch, errors} = useForm()
 
     const rateSetter = (data) => {
@@ -35,7 +35,7 @@ export default function Form(props){
 /* this is a fn to grab the data from form and send back up to App */
     const dataToApp = () => {
         /* if there is a section missing, need to throw an error */
-        // props.dataSetter({rate, mileRange, hours})
+        props.dataSetter({rate, mileRange, ...hours})
         console.log("hello")
     }
 

@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import Select from 'react-select'
 import styled from 'styled-components'
 
@@ -12,13 +13,20 @@ const SelectRateWrapper = styled.div`
 
 export default function SelectRate(props){
 
+    const [selectedRate, setSelectedRate] = useState(null)
+
     const clickHandler = (e) => {
-        props.rateSetter(e.value)
+        setSelectedRate(e.value)
+        sendRateToProps(e.value)
+    }
+    
+    const sendRateToProps = (data) => {
+        props.rateSetter(data)
     }
 
     return (
         <SelectRateWrapper>
-            <Select options={options} onChange={clickHandler} />
+            {selectedRate ? <Select options={options} onChange={clickHandler}/> : <span>Required field</span>}
         </SelectRateWrapper>
     )
 }
