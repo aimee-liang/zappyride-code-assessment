@@ -14,10 +14,12 @@ export default function SelectHours(props){
     const [value, setValue] = useState([15, 25])
 
     const changeHandler = (event, newValue) => {
-        setValue(newValue)
+        // setValue(newValue)
+        sendHourValuesToProps(newValue)
     }
 
     const sendHourValuesToProps = (data) => {
+        setValue(data)
         props.hourSetter(data)
     }
 
