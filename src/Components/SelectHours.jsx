@@ -11,7 +11,7 @@ const valueText = (value) => {
 
 export default function SelectHours(props){
 
-    const [value, setValue] = useState([15, 25])
+    const [value, setValue] = useState([15, 25]) /* need to update these values */
 
     const changeHandler = (event, newValue) => {
         sendHourValuesToProps(newValue) /* invoking this helper fn() to instantly set in state and also send this to props */

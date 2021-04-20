@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {useForm} from 'react-hook-form'
+// import {useForm} from 'react-hook-form'
 import SelectRate from "./SelectRate"
 import SelectMileRange from "./SelectMileRange"
 import SelectHours from "./SelectHours"
@@ -18,7 +18,7 @@ export default function Form(props){
     const [rate, setRate] = useState(null)
     const [mileRange, setMileRange] = useState(null)
     const [hours, setHourRange] = useState([])
-    const {register, handleSubmit, watch, errors} = useForm()
+    // const {register, handleSubmit, watch, errors} = useForm()
 
     const rateSetter = (data) => {
         setRate(data)
@@ -35,22 +35,24 @@ export default function Form(props){
 /* this is a fn to grab the data from form and send back up to App */
     const dataToApp = () => {
         /* if there is a section missing, need to throw an error */
-        props.dataSetter({rate, mileRange, ...hours})
-        console.log("hello")
+        // if (rate || mileRange === null) console.log("Required Field")
+        // if (hours.length === 0 || !hours.length) console.log ("Required field")
+        // props.dataSetter({rate, mileRange, ...hours})
+        console.log("hi")
     }
 
     return (
         <FormWrapper>
-            <form onSubmit={handleSubmit(dataToApp)}>
+            <form>
                 <label>Please select your current rate:</label>
                     <br/>
                     <br/>
-                    <SelectRate rateSetter={rateSetter}/>
+                    {rate === null ? <span style={{color: "red"}}>Required input</span> : <SelectRate rateSetter={rateSetter}/> }
                     <br />
                 <label>How many miles (per thousand) will you be driving per year?</label>
                     <br/>
                     <br/>
-                    <SelectMileRange mileSetter={mileSetter} />
+                    {mileRange === null ? <span style={{color: "red"}}>Required input </span> : <SelectMileRange mileSetter={mileSetter}/> }
                 <label>What hours do you plan on charging your EV?</label>
                     <br/>
                     <br/>
