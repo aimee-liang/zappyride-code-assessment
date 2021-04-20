@@ -20,6 +20,7 @@ export default function SelectHours(props){
     const sendHourValuesToProps = (data) => {
         setValue(data)
         props.hourSetter(data)
+        props.updateHoursInState()
     }
 
     return (
