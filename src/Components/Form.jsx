@@ -45,9 +45,8 @@ export default function Form(props){
                 <label>Please select your current rate:</label>
                     <br/>
                     <br/>
-                    <SelectRate rateSetter={rateSetter} ref={register({required: true})}/>
+                    <SelectRate rateSetter={rateSetter}/>
                     <br />
-                    {errors.}
                 <label>How many miles (per thousand) will you be driving per year?</label>
                     <br/>
                     <br/>
