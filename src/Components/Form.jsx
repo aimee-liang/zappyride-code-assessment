@@ -1,5 +1,4 @@
 import {useState} from 'react'
-// import {useForm} from 'react-hook-form'
 import SelectRate from "./SelectRate"
 import SelectMileRange from "./SelectMileRange"
 import SelectHours from "./SelectHours"
@@ -49,6 +48,7 @@ export default function Form(props){
 /* this is a fn to grab the data from form and send back up to App */
     const dataToApp = () => {
         // props.dataSetter({rate, mileRange, ...hours})
+        props.updateFormSubmittedInState()
         console.log("hi")
     }
 

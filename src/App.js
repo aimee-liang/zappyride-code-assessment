@@ -10,16 +10,11 @@ const AppWrapper = styled.div`
 `
 
 export default function App() {
-/* formData is going to be set in state so we know that everything is complete */
-  const [formData, setFormData] = useState({})
   const [rateAForComparison, setRateAForComparison] = useState(null) /* this will set rate A in comparison so we can compare in Load Page vs. TOU */
   const [touRateForComparison, setTOURateForComparison] = useState(null) /* this will set the TOU rate from touRate() */
-  
-
-/* pass dataSetter as props to Form component, which will save the data from the user in state */
-  const dataSetter = (info) => {
-    setFormData(info)
-  }
+  const [formSubmitted, setFormSubmitted] = useState(false) 
+    /* helper boolean passed as props. OnClick in Form,jsx will render true and if true will show 
+      LoadPage component */
 
 /* establish Rate A */
   const rateA = 0.15
@@ -36,13 +31,17 @@ export default function App() {
     return 
   }
 
+/* helper fn() to setState of formSubmitted */
+  const updateFormSubmittedInState = () => {
+    setFormSubmitted(true)
+  }
 
 
   return (
     <AppWrapper>
       <MuiThemeProvider>
         <AppBar title="ZappyRide Code Assessment"/>
-        <Form dataSetter={dataSetter} />
+        <Form updateFormSubmittedInState={updateFormSubmittedInState} />
   {/* loadpage should not render until form is complete */}
         <LoadPage />
       </MuiThemeProvider>
