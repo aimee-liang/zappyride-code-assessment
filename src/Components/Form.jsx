@@ -40,14 +40,14 @@ export default function Form(props){
     }
 
     return (
-        <>
-        {console.log(hours)}
         <FormWrapper>
             <form onSubmit={handleSubmit(dataToApp)}>
                 <label>Please select your current rate:</label>
                     <br/>
                     <br/>
-                    <SelectRate rateSetter={rateSetter} />
+                    <SelectRate rateSetter={rateSetter} ref={register({required: true})}/>
+                    <br />
+                    {errors.}
                 <label>How many miles (per thousand) will you be driving per year?</label>
                     <br/>
                     <br/>
@@ -60,6 +60,5 @@ export default function Form(props){
                 <Button variant="contained" color="primary" onSubmit={dataToApp}>Submit</Button>
             </form>
         </FormWrapper>
-        </>
     )
 }
