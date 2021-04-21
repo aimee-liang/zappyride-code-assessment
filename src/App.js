@@ -18,14 +18,19 @@ export default function App() {
   const [rateAForComparison, setRateAForComparison] = useState(null) /* this will set rate A in comparison so we can compare in Load Page vs. TOU */
   const [touRateForComparison, setTOURateForComparison] = useState(null) /* this will set the TOU rate from touRate() */
   const [formSubmitted, setFormSubmitted] = useState(false) 
-
-/* establish Rate A */
   const rateA = 0.15
 
 /* establish TOU rate */
   const touRate = () => {
+    let total
     /* if the hours are between noon - 6 pm, $0.2 kWh */
-    /* anytime else, $0.08 kWh */
+    if (12 <= formData["hours"][0] <= 18) {
+      total += (formData["hours"][0] * 0.2)
+    } else {
+      /* anytime else, $0.08 kWh */
+      total += (formData["hours"][0] * 0.08)
+    }
+    return total
   }
 
 /* calculate the bill B1 and the rate the user is currently on */
