@@ -53,7 +53,6 @@ export default function App() {
     <AppWrapper>
       <MuiThemeProvider>
         <AppBar title="ZappyRide Code Assessment"/>
-  {/* loadpage should not render until form is complete */}
 {formSubmitted ? <LoadPage/> : <Form updateFormSubmittedInState={updateFormSubmittedInState} />}
         {/* <Form updateFormSubmittedInState={updateFormSubmittedInState} /> */}
         {/* <LoadPage /> */}
