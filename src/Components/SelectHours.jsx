@@ -1,57 +1,31 @@
 import {useState} from 'react'
-// import Slider from '@material-ui/core/Slider'
 import styled from 'styled-components'
 
 const SelectHoursWrapper = styled.div`
     padding-bottom: 3%;
 `
-// const valueText = (value) => {
-//     return `${value}`
-// }
-
-// const marks = [
-//     {},
-//     {},
-//     {},
-//     {},
-//     {},
-//     {},
-//     {},
-//     {},
-//     {},
-//     {},
-//     {},
-//     {},
-//     {},
-//     {},
-//     {},
-//     {},
-// ]
 
 export default function SelectHours(props){
 
-    const [value, setValue] = useState([15, 25]) /* need to update these values */
+    const [minChargingTime, setMinChargingTime] = useState(null)
+    // const [maxChargingTime, setMaxChargingTime] = useState(null)
 
-    const changeHandler = (event, newValue) => {
-        sendHourValuesToProps(newValue) /* invoking this helper fn() to instantly set in state and also send this to props */
+    const updateMinChargingTime = (e) => {
+        setMinChargingTime(e.target.value)
+    }
+
+    const updateMaxChargingTime = (e) => {
+        sendHourValuesToProps([minChargingTime, e.target.value])
     }
 
     const sendHourValuesToProps = (data) => {
-        setValue(data)
         props.hourSetter(data)
         props.updateHoursInState()
     }
 
     return (
         <SelectHoursWrapper>
-            {/* <Slider 
-            value={value}
-            getAriaValueText={valueText}
-            valueLabelDisplay="auto"
-            onChange={changeHandler}
-            aria-labelledby="range-slider"
-            /> */}
-            <input type="time"></input>
+            <input type="time" min="0:00" max="23:00" onChange={updateMinChargingTime}></input> to <input type="time" min="1:00" max="24:00" onChange={updateMaxChargingTime}></input>
         </SelectHoursWrapper>
     )
 }

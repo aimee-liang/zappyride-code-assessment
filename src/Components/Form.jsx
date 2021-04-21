@@ -16,8 +16,10 @@ export default function Form(props){
 
     const [rate, setRate] = useState(null)
     const [rateInState, setRateInState] = useState(false) /* helper boolean - if rate is not in state or is null, display span */
+
     const [mileRange, setMileRange] = useState(null)
     const [mileRangeInState, setMileRangeInState] = useState(false)
+
     const [hours, setHourRange] = useState([])
     const [hoursInState, setHoursInState] = useState(false)
 
@@ -54,6 +56,7 @@ export default function Form(props){
 
     return (
         <>
+        {console.log(hours)}
         <FormWrapper>
             <form>
                 <label>Please select your current rate:</label>
