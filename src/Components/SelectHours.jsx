@@ -1,13 +1,32 @@
 import {useState} from 'react'
-import Slider from '@material-ui/core/Slider'
+// import Slider from '@material-ui/core/Slider'
 import styled from 'styled-components'
 
 const SelectHoursWrapper = styled.div`
     padding-bottom: 3%;
 `
-const valueText = (value) => {
-    return `${value}`
-}
+// const valueText = (value) => {
+//     return `${value}`
+// }
+
+// const marks = [
+//     {},
+//     {},
+//     {},
+//     {},
+//     {},
+//     {},
+//     {},
+//     {},
+//     {},
+//     {},
+//     {},
+//     {},
+//     {},
+//     {},
+//     {},
+//     {},
+// ]
 
 export default function SelectHours(props){
 
@@ -25,13 +44,14 @@ export default function SelectHours(props){
 
     return (
         <SelectHoursWrapper>
-            <Slider 
+            {/* <Slider 
             value={value}
             getAriaValueText={valueText}
             valueLabelDisplay="auto"
             onChange={changeHandler}
             aria-labelledby="range-slider"
-            />
+            /> */}
+            <input type="time"></input>
         </SelectHoursWrapper>
     )
 }

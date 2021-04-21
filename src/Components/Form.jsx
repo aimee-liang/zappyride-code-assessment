@@ -68,11 +68,14 @@ export default function Form(props){
                     <br/>
                     {mileRangeInState ? null : <span style={{color: "red", fontSize: "12px"}}>Required input* </span>}
                     <br/>
+                    <br/>
                     <SelectMileRange mileSetter={mileSetter} updateMileRangeInState={updateMileRangeInState}/> 
                 <label>What hours do you plan on charging your EV?</label>
                     <br/>
                     <br/>
                     {hoursInState? null : <span style={{color: "red", fontSize: "12px"}}>Required input* </span>}
+                    <br/>
+                    <br/>
                     <SelectHours hourSetter={hourSetter} updateHoursInState={updateHoursInState}/>
                     <br/>
                 <Button variant="contained" color="primary" onSubmit={dataToApp}>Submit</Button>
