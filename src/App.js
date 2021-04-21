@@ -10,6 +10,7 @@ const AppWrapper = styled.div`
 `
 
 export default function App() {
+  const [formData, setFormData] = useState({})
   const [rateAForComparison, setRateAForComparison] = useState(null) /* this will set rate A in comparison so we can compare in Load Page vs. TOU */
   const [touRateForComparison, setTOURateForComparison] = useState(null) /* this will set the TOU rate from touRate() */
   const [formSubmitted, setFormSubmitted] = useState(false) 
@@ -34,6 +35,11 @@ export default function App() {
 /* helper fn() to setState of formSubmitted */
   const updateFormSubmittedInState = () => {
     setFormSubmitted(true)
+  }
+
+/* updates Form Data */
+  const updateFormData = () => {
+    
   }
 
 

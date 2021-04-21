@@ -48,15 +48,14 @@ export default function Form(props){
     }
 
 /* this is a fn to grab the data from form and send back up to App */
-    const dataToApp = () => {
-        // props.dataSetter({rate, mileRange, ...hours})
+    const dataToApp = (e) => {
+        props.
         props.updateFormSubmittedInState()
-        console.log("hi")
+        // console.log("hi")
     }
 
     return (
         <>
-        {console.log(hours)}
         <FormWrapper>
             <form>
                 <label>Please select your current rate:</label>
@@ -81,7 +80,7 @@ export default function Form(props){
                     <br/>
                     <SelectHours hourSetter={hourSetter} updateHoursInState={updateHoursInState}/>
                     <br/>
-                <Button variant="contained" color="primary" onSubmit={dataToApp}>Submit</Button>
+                <Button variant="contained" color="primary" onClick={dataToApp}>Submit</Button>
             </form>
         </FormWrapper>
         </>
