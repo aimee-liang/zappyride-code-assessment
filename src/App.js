@@ -22,11 +22,10 @@ export default function App() {
 
 /* establish TOU rate */
   const touRate = () => {
-    let startTime = parseInt((formData["hours"][0]).split(":")[0]) /* hour value */
-    let endTime = parseInt((formData["hours"][1]).split(":")[0]) /* hour value */
+    let startTime = parseInt((formData["hours"][0]).split(":")[0])
+    let endTime = parseInt((formData["hours"][1]).split(":")[0])
     let hours = endTime - startTime
     let total
-
     let surgeStart = 12
     let surgeEnd = 18
 
@@ -60,12 +59,19 @@ export default function App() {
     // return total
   }
 
-// touRate()
-
-/* calculate the bill B1 and the rate the user is currently on */
-  const currentRate = () => {
-    return 
+/* calculate the rate using Rate A, and update state*/
+  const userRateA = () => {
+    let startTime = parseInt((formData["hours"][0]).split(":")[0])
+    let endTime = parseInt((formData["hours"][1]).split(":")[0])
+    let totalTime = (endTime - startTime) * rateA
+    setRateAForComparison(totalTime)
   }
+
+/* calculate using the TOU Rate */
+  const userTOURate = () => {
+    
+  }
+
 
   const updateFormSubmittedInState = () => {
     setFormSubmitted(true)

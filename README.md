@@ -70,14 +70,12 @@ options:
 • What hours of the day they plan to charge
 #### And display the following outputs:
 • Bill impact of charging an EV under each rate
-• Whether or not the user should switch rates (from A to B or from B to A, depending on their
-input) or whether they are already on the cheapest rate.
+• Whether or not the user should switch rates (from A to B or from B to A, depending on their input) or whether they are already on the cheapest rate.
 
-Please use this load profile (the “Electricity:Facility [kWh](Hourly)” column) as their current home load
-profile (pre-EV).
-For your reference, a similar (more complex) tool is deployed [here](https://ev.pge.com/rates/) .
-Please deploy your React app to a publicly accessible host (e.g. Heroku) for us to test, and please provide
-the source code (e.g. in GitHub).
+Please use this load profile (the “Electricity:Facility [kWh](Hourly)” column) as their current home load profile (pre-EV).
+For your reference, a similar (more complex) tool is deployed [here](https://ev.pge.com/rates/).
+
+Please deploy your React app to a publicly accessible host (e.g. Heroku) for us to test, and please provide the source code (e.g. in GitHub).
 
 ### Evaluation Criteria
 #### Basic criteria:
