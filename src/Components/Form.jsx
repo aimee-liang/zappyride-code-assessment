@@ -51,7 +51,6 @@ export default function Form(props){
     const dataToApp = (e) => {
         props.
         props.updateFormSubmittedInState()
-        // console.log("hi")
     }
 
     return (

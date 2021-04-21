@@ -10,12 +10,14 @@ const AppWrapper = styled.div`
 `
 
 export default function App() {
-  const [formData, setFormData] = useState({})
+  const [formData, setFormData] = useState({
+    rate: null,
+    mileRange: null,
+    hours: []
+  })
   const [rateAForComparison, setRateAForComparison] = useState(null) /* this will set rate A in comparison so we can compare in Load Page vs. TOU */
   const [touRateForComparison, setTOURateForComparison] = useState(null) /* this will set the TOU rate from touRate() */
   const [formSubmitted, setFormSubmitted] = useState(false) 
-    /* helper boolean passed as props. OnClick in Form,jsx will render true and if true will show 
-      LoadPage component */
 
 /* establish Rate A */
   const rateA = 0.15
@@ -23,7 +25,6 @@ export default function App() {
 /* establish TOU rate */
   const touRate = () => {
     /* if the hours are between noon - 6 pm, $0.2 kWh */
-    
     /* anytime else, $0.08 kWh */
   }
 
@@ -38,8 +39,8 @@ export default function App() {
   }
 
 /* updates Form Data */
-  const updateFormData = () => {
-    
+  const updateFormData = (e) => {
+    setFormData({...formData, [e.target.name]: e.target.value})
   }
 
 
@@ -47,9 +48,10 @@ export default function App() {
     <AppWrapper>
       <MuiThemeProvider>
         <AppBar title="ZappyRide Code Assessment"/>
-        <Form updateFormSubmittedInState={updateFormSubmittedInState} />
   {/* loadpage should not render until form is complete */}
-        <LoadPage />
+{formSubmitted ? <LoadPage/> : <Form updateFormSubmittedInState={updateFormSubmittedInState} />}
+        {/* <Form updateFormSubmittedInState={updateFormSubmittedInState} /> */}
+        {/* <LoadPage /> */}
       </MuiThemeProvider>
     </AppWrapper>
   );
