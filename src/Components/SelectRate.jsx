@@ -2,7 +2,7 @@ import Select from 'react-select'
 import styled from 'styled-components'
 
 const options = [
-    {value: '$0.15', label: 'Rate A ($0.15/kWh'},
+    {value: '$0.15', label: 'Rate A ($0.15/kWh)'},
     {value: 'TOU', label: 'Rate B (TOU Rate)'}
 ]
 

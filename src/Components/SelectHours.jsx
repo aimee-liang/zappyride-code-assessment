@@ -25,7 +25,7 @@ export default function SelectHours(props){
 
     return (
         <SelectHoursWrapper>
-            <input type="time" min="0:00" max="23:00" onChange={updateMinChargingTime}></input> to <input type="time" min="1:00" max="24:00" onChange={updateMaxChargingTime}></input>
+            <input type="time" name="hours" min="0:00" max="23:00" onChange={updateMinChargingTime}></input> to <input type="time" name="hours" min="1:00" max="24:00" onChange={updateMaxChargingTime}></input>
         </SelectHoursWrapper>
     )
 }

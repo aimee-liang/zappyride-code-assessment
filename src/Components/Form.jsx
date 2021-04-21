@@ -17,7 +17,7 @@ export default function Form(props){
     const [rate, setRate] = useState(null)
     const [rateInState, setRateInState] = useState(false) /* helper boolean - if rate is not in state or is null, display span */
 
-    const [mileRange, setMileRange] = useState(null)
+    const [mileRange, setMileRange] = useState(0)
     const [mileRangeInState, setMileRangeInState] = useState(false)
 
     const [hours, setHourRange] = useState([])
@@ -49,14 +49,14 @@ export default function Form(props){
 
 /* this is a fn to grab the data from form and send back up to App */
     const dataToApp = (e) => {
-        props.
+        props.updateFormData(rate, mileRange, hours)
         props.updateFormSubmittedInState()
     }
 
     return (
         <>
         <FormWrapper>
-            <form>
+            <form onSubmit={dataToApp}>
                 <label>Please select your current rate:</label>
                     <br/>
                     <br/>
@@ -70,7 +70,7 @@ export default function Form(props){
                     {mileRangeInState ? null : <span style={{color: "red", fontSize: "12px"}}>Required input* </span>}
                     <br/>
                     <br/>
-                    <SelectMileRange mileSetter={mileSetter} updateMileRangeInState={updateMileRangeInState}/> 
+                    <SelectMileRange mileSetter={mileSetter} updateMileRangeInState={updateMileRangeInState} /> 
                 <label>What hours do you plan on charging your EV?</label>
                     <br/>
                     <br/>
@@ -79,7 +79,7 @@ export default function Form(props){
                     <br/>
                     <SelectHours hourSetter={hourSetter} updateHoursInState={updateHoursInState}/>
                     <br/>
-                <Button variant="contained" color="primary" onClick={dataToApp}>Submit</Button>
+                <Button variant="contained" color="primary" type="submit">Submit</Button>
             </form>
         </FormWrapper>
         </>
