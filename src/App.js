@@ -69,7 +69,7 @@ export default function App() {
 
 /* calculate using the TOU Rate */
   const userTOURate = () => {
-    
+
   }
 
 
@@ -89,7 +89,11 @@ export default function App() {
     <AppWrapper>
       <MuiThemeProvider>
         <AppBar title="ZappyRide Code Assessment"/>
-{formSubmitted ? <LoadPage/> : <Form updateFormSubmittedInState={updateFormSubmittedInState} updateFormData={updateFormData} />}
+          {formSubmitted ? 
+            <LoadPage/> 
+            : 
+            <Form updateFormSubmittedInState={updateFormSubmittedInState} updateFormData={updateFormData} 
+          />}
         {/* <Form updateFormSubmittedInState={updateFormSubmittedInState} /> */}
         {/* <LoadPage /> */}
       </MuiThemeProvider>
