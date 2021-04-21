@@ -48,6 +48,7 @@ export default function App() {
     }
     total = hours * 0.08
     console.log(total)
+    // setTOURateForComparison(total)
     return total
 
     // if (start <= formData["hours"][0] <= end) {
@@ -67,12 +68,6 @@ export default function App() {
     setRateAForComparison(totalTime)
   }
 
-/* calculate using the TOU Rate */
-  const userTOURate = () => {
-
-  }
-
-
   const updateFormSubmittedInState = () => {
     setFormSubmitted(true)
   }
@@ -80,7 +75,6 @@ export default function App() {
   const updateFormData = (rate, mileRange, hours) => {
     setFormData({...formData, rate, mileRange, hours})
   }
-
 
   return (
     <>
@@ -90,7 +84,7 @@ export default function App() {
       <MuiThemeProvider>
         <AppBar title="ZappyRide Code Assessment"/>
           {formSubmitted ? 
-            <LoadPage/> 
+            <LoadPage rateAData={rateAForComparison} touRateData={touRateForComparison} /> 
             : 
             <Form updateFormSubmittedInState={updateFormSubmittedInState} updateFormData={updateFormData} 
           />}
