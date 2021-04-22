@@ -50,7 +50,6 @@ export default function App() {
     return total
   }
 
-/* calculate the rate using Rate A, and update state*/
   const userRateA = () => {
     let startTime = parseInt((formData["hours"][0]).split(":")[0])
     let endTime = parseInt((formData["hours"][1]).split(":")[0])
