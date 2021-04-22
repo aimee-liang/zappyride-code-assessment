@@ -5,11 +5,19 @@ const LoadPageWrapper = styled.div`
     margin: auto;
     align-items: center;
     width: 38vw;
+    display: row;
+    padding-left: 3%;
 `
 
 const RateWrapper = styled.div`
-    border: solid 1px black
-    border-radius; 25px;
+    align-items: center;
+    border: solid 1px gray;
+    border-radius: 25px;
+    text-align: center;
+    height: 15vh;
+    width: 25vw;
+    margin-top: 3%;
+    margin-bottom: 3%;
 `
 
 export default function LoadPage(props){
@@ -24,19 +32,20 @@ export default function LoadPage(props){
     return (
         <LoadPageWrapper>
             <RateWrapper>
-                <h4>Rate A:</h4>
-                <h5>On Rate A, your bill comes out to: </h5>
-                <h2>{props.rateAData}</h2>
+                <h2>Rate A</h2>
+                <h3>Your bill comes out to: </h3>
+                <h1>{props.rateAData}</h1>
             </RateWrapper>
 
             <RateWrapper>
-                <h4>TOU Rate:</h4>
-                <h5>On TOU Rate, your bill comes out to: </h5>
-                <span>{props.touRateData}</span>
+                <h2>TOU Rate:</h2>
+                <h3>On TOU Rate, your bill comes out to: </h3>
+                <h1>{props.touRateData}</h1>
             </RateWrapper>
 
             <RateWrapper>
-                <h5>Based on the information you've provided, {showOptimalRate} is the optimal rate.</h5>
+                <h2>Your optimal rate is: </h2>
+                <h1>{showOptimalRate()}</h1>
             </RateWrapper>
         </LoadPageWrapper>
     )
