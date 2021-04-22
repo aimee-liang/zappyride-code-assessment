@@ -63,8 +63,8 @@ export default function App() {
   const updateFormSubmittedInState = () => {
     setFormSubmitted(true)
     /* once form info has all been submitted and is true, invoke touRate() and userRateA()? */
-    userRateA()
-    touRate()
+    // userRateA()
+    // touRate()
   }
 
   const updateFormData = (rate, mileRange, hours) => {
@@ -73,7 +73,7 @@ export default function App() {
 
   return (
     <>
-    {console.log(touRate())}
+    {/* {console.log(touRate())} */}
     <AppWrapper>
       <MuiThemeProvider>
         <AppBar title="ZappyRide Code Assessment"/>
@@ -83,7 +83,6 @@ export default function App() {
             <Form updateFormSubmittedInState={updateFormSubmittedInState} updateFormData={updateFormData} 
           />}
         {/* <Form updateFormSubmittedInState={updateFormSubmittedInState} /> */}
-        {/* <LoadPage /> */}
       </MuiThemeProvider>
     </AppWrapper>
     </>
