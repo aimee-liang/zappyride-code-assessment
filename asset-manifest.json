@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/zappyride-code-assessment/static/css/main.c5fa6883.chunk.css",
+    "main.js": "/zappyride-code-assessment/static/js/main.80371e96.chunk.js",
+    "main.js.map": "/zappyride-code-assessment/static/js/main.80371e96.chunk.js.map",
+    "runtime-main.js": "/zappyride-code-assessment/static/js/runtime-main.dbbf571c.js",
+    "runtime-main.js.map": "/zappyride-code-assessment/static/js/runtime-main.dbbf571c.js.map",
+    "static/js/2.162a9111.chunk.js": "/zappyride-code-assessment/static/js/2.162a9111.chunk.js",
+    "static/js/2.162a9111.chunk.js.map": "/zappyride-code-assessment/static/js/2.162a9111.chunk.js.map",
+    "static/js/3.e7e65832.chunk.js": "/zappyride-code-assessment/static/js/3.e7e65832.chunk.js",
+    "static/js/3.e7e65832.chunk.js.map": "/zappyride-code-assessment/static/js/3.e7e65832.chunk.js.map",
+    "index.html": "/zappyride-code-assessment/index.html",
+    "static/css/main.c5fa6883.chunk.css.map": "/zappyride-code-assessment/static/css/main.c5fa6883.chunk.css.map",
+    "static/js/2.162a9111.chunk.js.LICENSE.txt": "/zappyride-code-assessment/static/js/2.162a9111.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dbbf571c.js",
+    "static/js/2.162a9111.chunk.js",
+    "static/css/main.c5fa6883.chunk.css",
+    "static/js/main.80371e96.chunk.js"
+  ]
+}
