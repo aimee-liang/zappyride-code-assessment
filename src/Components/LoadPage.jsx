@@ -3,21 +3,20 @@ import styled from 'styled-components'
 const LoadPageWrapper = styled.div`
     padding-top: 3%;
     margin: auto;
-    align-items: center;
-    width: 38vw;
+    width: 35vw;
     display: row;
-    padding-left: 3%;
+    padding-right: 3%;
 `
 
 const RateWrapper = styled.div`
-    align-items: center;
     border: solid 1px gray;
     border-radius: 25px;
     text-align: center;
-    height: 15vh;
-    width: 25vw;
-    margin-top: 3%;
-    margin-bottom: 3%;
+    min-height: 22vh;
+    min-width: 40vw;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    overflow-wrap: break-word;
 `
 
 export default function LoadPage(props){
@@ -39,7 +38,7 @@ export default function LoadPage(props){
 
             <RateWrapper>
                 <h2>TOU Rate:</h2>
-                <h3>On TOU Rate, your bill comes out to: </h3>
+                <h3>Your bill comes out to: </h3>
                 <h1>{props.touRateData}</h1>
             </RateWrapper>
 
