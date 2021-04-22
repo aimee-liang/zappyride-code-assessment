@@ -22,11 +22,11 @@ export default function App() {
 
 /* establish TOU rate */
   const touRate = () => {
-    let startTime = parseInt((formData["hours"][0]).split(":")[0])
-    let endTime = parseInt((formData["hours"][1]).split(":")[0])
-    let hours = endTime - startTime
+    let startTime = parseInt((formData["hours"][0]).split(":")[0]) /* sets the user's start time as an integer */
+    let endTime = parseInt((formData["hours"][1]).split(":")[0]) /* likewise but the end time */
+    let hours = endTime - startTime /* difference between hours */
     let total
-    let surgeStart = 12
+    let surgeStart = 12 
     let surgeEnd = 18
 
     /* WITHIN SURGE
@@ -47,16 +47,8 @@ export default function App() {
       return total
     }
     total = hours * 0.08
-    console.log(total)
-    // setTOURateForComparison(total)
-    return total
-
-    // if (start <= formData["hours"][0] <= end) {
-      // total += (formData["hours"][0] * 0.2)
-    // } else {
-    //   /* anytime else, $0.08 kWh */
-    //   total += (formData["hours"][0] * 0.08)
-    // }
+    // console.log(total)
+    setTOURateForComparison(total)
     // return total
   }
 
@@ -70,6 +62,9 @@ export default function App() {
 
   const updateFormSubmittedInState = () => {
     setFormSubmitted(true)
+    /* once form info has all been submitted and is true, invoke touRate() and userRateA()? */
+    userRateA()
+    touRate()
   }
 
   const updateFormData = (rate, mileRange, hours) => {
@@ -79,7 +74,6 @@ export default function App() {
   return (
     <>
     {console.log(touRate())}
-    {console.log(formData)}
     <AppWrapper>
       <MuiThemeProvider>
         <AppBar title="ZappyRide Code Assessment"/>
