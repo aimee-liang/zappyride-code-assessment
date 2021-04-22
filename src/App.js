@@ -15,8 +15,8 @@ export default function App() {
     mileRange: null,
     hours: ["0:00", "0:00"]
   })
-  const [rateAForComparison, setRateAForComparison] = useState(null) /* this will set rate A in comparison so we can compare in Load Page vs. TOU */
-  const [touRateForComparison, setTOURateForComparison] = useState(null) /* this will set the TOU rate from touRate() */
+  // const [rateAForComparison, setRateAForComparison] = useState(null) /* this will set rate A in comparison so we can compare in Load Page vs. TOU */
+  // const [touRateForComparison, setTOURateForComparison] = useState(null) /* this will set the TOU rate from touRate() */
   const [formSubmitted, setFormSubmitted] = useState(false) 
   const rateA = 0.15
 
@@ -47,9 +47,7 @@ export default function App() {
       return total
     }
     total = hours * 0.08
-    // console.log(total)
-    setTOURateForComparison(total)
-    // return total
+    return total
   }
 
 /* calculate the rate using Rate A, and update state*/
@@ -57,14 +55,11 @@ export default function App() {
     let startTime = parseInt((formData["hours"][0]).split(":")[0])
     let endTime = parseInt((formData["hours"][1]).split(":")[0])
     let totalTime = (endTime - startTime) * rateA
-    setRateAForComparison(totalTime)
+    return totalTime
   }
 
   const updateFormSubmittedInState = () => {
     setFormSubmitted(true)
-    /* once form info has all been submitted and is true, invoke touRate() and userRateA()? */
-    // userRateA()
-    // touRate()
   }
 
   const updateFormData = (rate, mileRange, hours) => {
@@ -73,16 +68,14 @@ export default function App() {
 
   return (
     <>
-    {/* {console.log(touRate())} */}
     <AppWrapper>
       <MuiThemeProvider>
-        <AppBar title="ZappyRide Code Assessment"/>
+        <AppBar title="ZappyRide Code Assessment" showMenuIconButton={false} />
           {formSubmitted ? 
-            <LoadPage rateAData={rateAForComparison} touRateData={touRateForComparison} /> 
+            <LoadPage touRate={touRate} userRateA={userRateA} /* rateAData={rateAForComparison} touRateData={touRateForComparison} */ /> 
             : 
             <Form updateFormSubmittedInState={updateFormSubmittedInState} updateFormData={updateFormData} 
           />}
-        {/* <Form updateFormSubmittedInState={updateFormSubmittedInState} /> */}
       </MuiThemeProvider>
     </AppWrapper>
     </>

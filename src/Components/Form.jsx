@@ -53,6 +53,11 @@ export default function Form(props){
         props.updateFormSubmittedInState()
     }
 
+    const disableButton = () => {
+        if (rateInState && mileRangeInState && hoursInState) return false
+        return true
+    }
+
     return (
         <>
         <FormWrapper>
@@ -79,7 +84,7 @@ export default function Form(props){
                     <br/>
                     <SelectHours hourSetter={hourSetter} updateHoursInState={updateHoursInState}/>
                     <br/>
-                <Button variant="contained" color="primary" type="submit">Submit</Button>
+                <Button variant="contained" color="primary" type="submit" disabled={disableButton()}>Submit</Button>
             </form>
         </FormWrapper>
         </>
